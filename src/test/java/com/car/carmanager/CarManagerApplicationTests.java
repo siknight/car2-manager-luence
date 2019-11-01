@@ -5,6 +5,7 @@ import com.car.bean.Main_nav;
 import com.car.controller.CarController;
 import com.car.controller.ManagerController;
 import com.car.dao.CarDao;
+import com.car.dao.ChartDao;
 import com.car.dao.ManagerDao;
 import com.car.dao.NavDao;
 import com.car.service.CarService;
@@ -18,6 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CarManagerApplicationTests {
@@ -28,10 +32,21 @@ public class CarManagerApplicationTests {
     ManagerController managerController;
 
     @Autowired
+    ChartDao chartdao;
+
+    @Autowired
     ManagerService managerService;
 
     @Autowired
     NavDao navdao;
+
+    @Test
+    public  void testChartDao(){
+
+        System.out.println(chartdao.CarSalesName());
+        System.out.println(chartdao.CarSalesNum());
+
+    }
 
     @Test
     public  void testDao(){
